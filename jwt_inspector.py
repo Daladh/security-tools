@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-jwt_inspector.py — Decode and inspect a JSON Web Token (JWT).
+jwt_inspector.py - Decode and inspect a JSON Web Token (JWT).
 
 Decodes the header and payload (without verifying the signature) and flags
 common security weaknesses, such as the 'none' algorithm or a missing
@@ -61,12 +61,12 @@ def inspect(token: str) -> int:
 
     alg = str(header.get("alg", "")).lower()
     if alg == "none":
-        warnings.append("Algorithm is 'none' — the token is unsigned and trivially forgeable.")
+        warnings.append("Algorithm is 'none' - the token is unsigned and trivially forgeable.")
     if not signature_seg:
-        warnings.append("Signature segment is empty — token integrity is not protected.")
+        warnings.append("Signature segment is empty - token integrity is not protected.")
 
     if "exp" not in payload:
-        warnings.append("No 'exp' (expiration) claim — token may never expire.")
+        warnings.append("No 'exp' (expiration) claim - token may never expire.")
     else:
         try:
             exp = datetime.fromtimestamp(int(payload["exp"]), tz=timezone.utc)

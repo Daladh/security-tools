@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-dir_fuzzer.py — Directory / path discovery tool for web servers.
+dir_fuzzer.py - Directory / path discovery tool for web servers.
 
 Sends requests for each word in a wordlist and reports paths that exist,
-filtered by HTTP status code. Educational tool — only use against web
+filtered by HTTP status code. Educational tool - only use against web
 applications you own or are explicitly authorized to test.
 
 Usage:
@@ -66,7 +66,7 @@ def main() -> int:
         print(f"[!] Could not read wordlist: {exc}", file=sys.stderr)
         return 1
 
-    print(f"[*] Fuzzing {args.base_url} — {len(words)} words, "
+    print(f"[*] Fuzzing {args.base_url} - {len(words)} words, "
           f"reporting statuses {sorted(statuses)}\n")
 
     found = 0

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-port_scanner.py — Multithreaded TCP port scanner with banner grabbing.
+port_scanner.py - Multithreaded TCP port scanner with banner grabbing.
 
 Educational tool. Only scan hosts you own or are explicitly authorized to test.
 
@@ -75,7 +75,7 @@ def main() -> int:
         return 1
 
     ports = parse_ports(args.ports) if args.ports else COMMON_PORTS
-    print(f"[*] Scanning {args.host} ({target_ip}) — {len(ports)} ports, {args.threads} threads\n")
+    print(f"[*] Scanning {args.host} ({target_ip}) - {len(ports)} ports, {args.threads} threads\n")
 
     open_ports: list[tuple[int, str]] = []
     with ThreadPoolExecutor(max_workers=args.threads) as pool:
